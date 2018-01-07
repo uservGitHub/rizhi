@@ -17,3 +17,6 @@ $ git add ... git commit ...
 
 =>https://github.com/github/gitignore
 
+git使用流程
+登录github创建仓库
+剩余操作在bash上完成
