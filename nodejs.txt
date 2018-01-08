@@ -1,4 +1,5 @@
 REPL 控制台命令，见帮助文档
+全局安装，require无法加载时，我的电脑->属性->高级->环境变量 NODE_PATH=(npm config ls中的prefix+'/node_modules/)
 脚本执行
 #!/usr/bin/env node
 权限修改
