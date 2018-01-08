@@ -1,1 +1,10 @@
 REPL 控制台命令，见帮助文档
+脚本执行
+#!/usr/bin/env node
+权限修改
+$ chmod 755 filename
+$ ./filename
+参数传递
+process.argv = [nodePath, filePath, param0,...paramn]
+$ ./filename 123 abc
+[nodePath, filePath, '123', 'abc']
