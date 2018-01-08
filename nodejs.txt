@@ -67,4 +67,13 @@ process.on('SIGINT', function () {
   process.exit(0)
 })
 $ kill -s SIGINT [process_id]
+管道
+var fs = require('fs')
+var zlib = require('zlib')
+fs.createReadStream('xxx.txt')
+  .pipe(zlib.createGzip())
+  .pipe(fs.createWriteStream('xxx.txt.gz'))
+fs.ceateReadStream('xxx.txt.gz')
+  .pipe(zlib.createGunzip())
+  .pipe(fs.createWriteStream('xxx.txt'))
 
