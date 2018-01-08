@@ -76,4 +76,28 @@ fs.createReadStream('xxx.txt')
 fs.ceateReadStream('xxx.txt.gz')
   .pipe(zlib.createGunzip())
   .pipe(fs.createWriteStream('xxx.txt'))
+var request = require('request')
+var post = request.post(url)
+process.stdin
+  .pipe(fetch)
+  .pipe(process.stdout)
+stdin-->post-->stdout
+process.stdin.pipe(process.stdout)
+process.stdin.pipe(fs.createWriteStream('out.txt'))
+fs.createReadStream('in.txt').pipe(process.stdin)
+stream.Transform
+class ThroughStream extends stream.Transform {
+  constructor(options) {
+    super(options);
+  }
+  _transform(chunk, enc, cb) {
+    this.push(chunk.toString().replace(/\n/, '').toUpperCase());
+    cb();
+  }
+}
+process.stdin.pipe(
+  new ThroughStream({
+    objectMode: true
+  })
+).pipe(process.stdout)
 
