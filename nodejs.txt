@@ -25,9 +25,17 @@ var exec = require('child_process').exec
 var cmdStr = 'curl http://www.weather.com.cn/data/sk/101010100.html' 
 exec(cmdStr, function(err,stdout,stderr){
   if(err){
-    console.log('execute error:\n'+stderr
+    console.log('execute error:\n'+stderr)
   }else{
     var data = JSON.parse(stdout)
     console.log(data)
   }
+})
+exec('python xxx.py 123 abc', function(err,stdout,stderr){
+  //...
+})
+调用/执行shell脚本
+var sh = require('child_process').execFile
+sh('xxx.sh', ['-H','localhost'], null, function(err, stdout, stderr){
+  //...
 })
