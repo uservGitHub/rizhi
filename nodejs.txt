@@ -39,3 +39,32 @@ var sh = require('child_process').execFile
 sh('xxx.sh', ['-H','localhost'], null, function(err, stdout, stderr){
   //...
 })
+使用shelljs库
+var sh = require('shelljs')
+if(!sh.which('git')){
+  console.log('require git')
+  sh.exit(1)
+}
+sh.rm('-rf', 'out/Release')
+sh.cp('-R', 'stuff/', 'out/Release')
+sh.cd('lib')
+if (sh.exec('git commit -am "Auto-commit"').code !== 0) {
+  sh.echo('Error: Git commit failed')
+  sh.exit(1)
+}
+重定向
+var sin = process.stdin
+var sout = process.stdout
+sin.resume()
+sin.setEncoding('utf8')
+sin.on('data', function(data){
+  sout.write(data)
+})
+$ echo 'cat' | ./print
+系统信号
+process.on('SIGINT', function () {
+  console.log('Got a SIGINT')
+  process.exit(0)
+})
+$ kill -s SIGINT [process_id]
+
