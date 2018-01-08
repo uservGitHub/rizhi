@@ -1,0 +1,4 @@
+SIGPIPE
+TCP服务器端关闭连接，客户端发送数据，会收到RST响应；再次发送数据，系统发送SIGPIPE信号给进程，告诉进程不要再写了。
+对收到FIN包的socket调用read取缓冲区，长度为0，表示对端已关闭；但第一次write时没有问题，发送报文时会导致对端发RST包，因为对端已经close，
+完全关闭，收到RST包，调用write时，会生成SIGPIPE信号，导致进程退出。为防止进程退出，要利用signal(SIGPIPE,SIG_ING)捕获SIGPIPE或忽略SIGPIPE。
