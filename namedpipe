@@ -1,0 +1,5 @@
+electron 与 C# Window程序通信
+命名管道，http://www.cnblogs.com/BoyXiao/archive/2011/01/02/1924188.html
+net模块建立命名管道('\\.\pipe\'+PIPE_NAME)
+IPC通信(https://segmentfault.com/a/1190000006919539)
+Tcp通信
