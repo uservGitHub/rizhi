@@ -1,0 +1,11 @@
+asciimath.org
+在线绘图 https://zh.numberempire.com/graphingcalculator.php     http://fooplot.com/
+f(x)=abs(x)
+f(x)={
+  (-xbb" , "x<0),
+  (0bb" , "x=0),
+  (xbb" , "x>0)
+:}
+abs(x) = {(-xbb" , "x<0),(0bb" , "x=0),(xbb" , "x>0):}
+取下界
+f(x)=|__x/a__|bb" , "ainNNbb" , "[0,1)
