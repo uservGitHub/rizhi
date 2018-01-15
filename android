@@ -1,0 +1,3 @@
+android studio 
+http proxy Host name:http://ubuntu.buct.cn/ port:80 check connection:www.baidu.com
+bin 目录下 idea.properties disable.android.first.run=true
