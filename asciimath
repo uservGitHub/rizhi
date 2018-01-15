@@ -9,3 +9,5 @@ f(x)={
 abs(x) = {(-xbb" , "x<0),(0bb" , "x=0),(xbb" , "x>0):}
 取下界
 f(x)=|__x/a__|bb" , "ainNNbb" , "[0,1)
+n个值 end-to-end 通过index来实现
+f(x)=[(x+-1)+n]%nbb" , " x in (-oo,+oo)
