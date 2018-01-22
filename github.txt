@@ -27,6 +27,9 @@ $ git add .
 $ git commit -am "add newfile"
 $ git push -u origin first
 =>远程分支创建完毕
+$ git branch -r -d remote/branch
+$ git push remote: branch
+=>删除远程分支
 ===
 $ git clone git@github.com:user/a.git
 $ git branch -r
