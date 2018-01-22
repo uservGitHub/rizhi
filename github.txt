@@ -18,9 +18,17 @@ $ git add ... git commit ...
 =>https://github.com/github/gitignore
 
 git使用流程
-登录github创建仓库
-剩余操作在bash上完成
-$ git clone git@github.com:user/xxx.git
+登录github.com创建仓库a.git,添加一个默认文件,剩余操作在bash上完成
+$ git clone git@github.com:user/a.git
+$ cd a
+$ git checkout -b first origin/master
+$ echo '# file' >> newfile
+$ git add .
+$ git commit -am "add newfile"
+$ git push -u origin first
+=>远程分支创建完毕
+===
+$ git clone git@github.com:user/a.git
 $ git branch -r
 =>远程分支
 $ git branch 
