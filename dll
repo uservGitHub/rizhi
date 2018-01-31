@@ -1,0 +1,12 @@
+dll被应用程序加载到进程的虚拟空间中，成为调用进程的一部分
+此时dll只能被该进程的线程访问，调用进程句柄可被该dll所用。
+内存中，一个dll只有一个实例，dll中创建的对象（含变量）都归线程或进程所有。
+每种语言调用dll的方法都不尽相同。
+C#中的dll调用https://www.cnblogs.com/lhyqzx/p/5970406.html
+非托管静态调用：DllImport是全局的，dll中非托管函数调用是全局的、静态的
+非托管动态调用：LoadLibrary,GetProcAddress,FreeLibrary
+GetProcAddress获取引入的函数，将符号或标识转换为DLL内部地址
+静态托管dll的调用，添加引用
+动态托管dll的调用，利用反射，Assembly.LoadFrom 。
+
+
