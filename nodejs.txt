@@ -56,7 +56,7 @@ if (sh.exec('git commit -am "Auto-commit"').code !== 0) {
 重定向
 var sin = process.stdin
 var sout = process.stdout
-sin.resume()
+sin.resume() //对接输入，可用于管道
 sin.setEncoding('utf8')
 sin.on('data', function(data){
   sout.write(data)
