@@ -1,11 +1,12 @@
 //shell 方式
 #! /usr/local/bin/tcc -run
 
-//管道
+//管道作为输入
 GUN/Linux 中-表示标准输入stdin读取，也可能是/dev/stdin /proc/self/fd/0
 $ cat a.c | tcc -run -
 $ echo "..." | tcc -run -
 $ echo "..." | ./csh -
+//支持shell管道的方法：
 #include <stdio.h>
 int main(int argc, char **argv)
 {
