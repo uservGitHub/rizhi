@@ -20,6 +20,7 @@ int main(int argc, char **argv)
 $ echo "a"|tcc -run dup.c|sed -e 's/a/b/g'
 //fputc scanf 都可以
 //https://www.ibm.com/developerworks/cn/linux/l-tinyc/part1/
+//https://www.cnblogs.com/LittleHann/p/4431974.html
 $ time tcc -run \
 > tcc.c -I/usr/lib/tcc/include -B/usr/lib/tcc -run \
 > tcc.c -v 
