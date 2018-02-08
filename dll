@@ -13,3 +13,36 @@ GetProcAddress获取引入的函数，将符号或标识转换为DLL内部地址
 C#程序嵌入dll的调用,dll作为资源文件(先加密)嵌入C#应用程序，实现动态调用
 加载前解密，就大大增强了代码的保密性。
 
+字节编码
+.h
+#ifndef __user
+typedef struct{
+	char name[32];
+	int age;
+} User;
+User* CreateUser(void);
+#endif
+#include <malloc.h>
+#include <string.h>
+#include "user.h"
+.c
+__declspec(dllexport) User* CreateUser(){
+	User *user = (User*)malloc(sizeof(User));
+	memset(user->name, '\0', sizeof(user->name));
+	strcpy(user->name, "noname-没字名");
+	user->age = 101;
+	//free(defname);//不能加
+	return user;
+}
+tinyc 生成动态库，C#调用
+1   public struct User
+    {
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)]
+        public byte[] Name;
+        public int Age;
+    }
+http://www.qqxiuzi.cn/bianma/Unicode-UTF.php 差汉字编码
+C#端，chars = Name.TakeWhile(s=>s!=0).ToArray()
+Encoding.UTF8.GetString(chars)就可获得原字符串
+
+
