@@ -50,3 +50,5 @@ myObservable // observable will be subscribed on i/o thread
   .doOnNext(/* ...and everything below until next observeOn */)
   .observeOn(Schedulers.io())
   .subscribe(/* this will be called on i/o thread */);
+  
+ 如果 subscribe 中既有耗时又有Ui操作，那就需要借助runOnUiThread
