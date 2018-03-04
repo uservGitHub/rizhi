@@ -1,0 +1,36 @@
+1 java
+new Thread() {
+  @override
+  public void run() {
+    super.run();
+    // 其他操作
+    getActivity().runOnUiThread(new Runnable() {
+      @Override
+      public void run() {
+        // Ui 操作
+      }
+    }
+  }
+}
+2 kotlin
+async {
+  // 其他操作
+  runOnUiThread {
+    // Ui 操作
+  }
+}
+3 rxjava kotlin
+Observable.fromIterable(collection)
+  .flatMap({ Observable.just(...) })
+  .filter({ it.xxx == yyy })
+  .map({ NewObjectClass() })
+  .repeat( n )
+  .subscribeOn(Schedulers.io())
+  .observeOn(Schedulers.newThread())  
+  // Schedulers.newThread() 等同于 async, 
+  // AndroidSchedulers.mainThread 等同于 async + runOnUiThread
+  .subscribe({
+    // 其他操作
+    // Ui 操作, 是否使用runOnUiThread要看调度方式
+  })
+
