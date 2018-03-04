@@ -34,3 +34,7 @@ Observable.fromIterable(collection)
     // Ui 操作, 是否使用runOnUiThread要看调度方式
   })
 
+subscribeOn 指定被创建的事件内容将以何种线程发出
+observeOn 指定处理发生的线程
+map 实现事件对象的变换
+flatMap 实现一对多的转换，改变的不仅仅是事件对象，还又事件本身Observable.xxx
