@@ -38,3 +38,15 @@ subscribeOn 指定被创建的事件内容将以何种线程发出
 observeOn 指定处理发生的线程
 map 实现事件对象的变换
 flatMap 实现一对多的转换，改变的不仅仅是事件对象，还又事件本身Observable.xxx
+
+1.0 -> 2.0
+Action1 Consumer
+Action2 BiConsumer
+
+myObservable // observable will be subscribed on i/o thread
+  .subscribeOn(Schedulers.io())
+  .observeOn(AndroidSchedulers.mainThread())
+  .map(/* this will be called on main thread... */)
+  .doOnNext(/* ...and everything below until next observeOn */)
+  .observeOn(Schedulers.io())
+  .subscribe(/* this will be called on i/o thread */);
