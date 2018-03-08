@@ -63,3 +63,4 @@ Observable.create(发射器受下面第一个subscribeOn线程控制)
   .subscribeOn(有效).subscribeOn(无效)
   .observeOn(切换，对后面有效).doOnNext(受前面的ObserveOn线程控制)
   .observeOn(切换).subscribe(受前面的ObserveOn线程控制)
+https://www.jianshu.com/p/0cd258eecf60
