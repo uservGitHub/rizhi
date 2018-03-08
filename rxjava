@@ -53,3 +53,13 @@ myObservable // observable will be subscribed on i/o thread
   .subscribe(/* this will be called on i/o thread */);
   
  如果 subscribe 中既有耗时又有Ui操作，那就需要借助runOnUiThread
+
+线程切换
+线程名标志 Thead.currentThread.name
+Schedulers. io()=cache,newThead=RxNew
+AndroidSchedulers.mainThread=main
+subscribeOn(..) 第一个有效，observeOn(..)立即切换
+Observable.create(发射器受下面第一个subscribeOn线程控制)
+  .subscribeOn(有效).subscribeOn(无效)
+  .observeOn(切换，对后面有效).doOnNext(受前面的ObserveOn线程控制)
+  .observeOn(切换).subscribe(受前面的ObserveOn线程控制)
