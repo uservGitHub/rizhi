@@ -1,3 +1,6 @@
+==>kotlin pixels to IntArray
+val pixels = IntArray(bmp.width * bmp.height, { 0 })
+bmp.getPixels(pixels, 0, bmp.width, 0, 0, bmp.width, bmp.height)
 ==>bitmapt to bytes
 int byteCout = bmp.getByteCount();
 ByteBuffer buf = ByteBuffer.allocate(byteCount);
