@@ -1,0 +1,10 @@
+==>bitmapt to bytes
+int byteCout = bmp.getByteCount();
+ByteBuffer buf = ByteBuffer.allocate(byteCount);
+bmp.copyPixelsToBuffer(buf);
+byte[] byteArray = buf.array();
+==>bytes to bitmap
+Bitmap bitmap = BitmapFactory.decodeByteArray(bitmapdata, 0, bitmapdata.length); 
+bitmapdata是包含了图像参数的，而非简单的RGBA数据
+Bitmap stitchBmp = Bitmap.createBitmap(width, height, type);
+stitchBmp.copyPixelsFromBuffer(ByteBuffer.wrap(byteArray));
