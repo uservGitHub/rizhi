@@ -8,3 +8,22 @@ Bitmap bitmap = BitmapFactory.decodeByteArray(bitmapdata, 0, bitmapdata.length);
 bitmapdata是包含了图像参数的，而非简单的RGBA数据
 Bitmap stitchBmp = Bitmap.createBitmap(width, height, type);
 stitchBmp.copyPixelsFromBuffer(ByteBuffer.wrap(byteArray));
+==> java style
+    public native String stringFromJNI();
+    static {
+        System.loadLibrary("native-lib");
+    }
+==> kotlin style
+    init {
+        System.loadLibrary("native-lib")
+    }
+    external fun stringFromJNI(): String
+    
+external fun intFromJNI(): Int
+extern "C"
+JNIEXPORT jint
+
+JNICALL
+Java_xxx_intFromJNI(JNIEnv *env,jobject activity) {
+    return 1 << 8;
+}
