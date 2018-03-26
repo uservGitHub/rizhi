@@ -4,3 +4,5 @@ bin 目录下 idea.properties disable.android.first.run=true
 
 anko 的介绍 https://www.jianshu.com/p/7cf5b42eb25f
 constraintLayout https://github.com/Kotlin/anko/wiki/ConstraintLayout#defining-lparams-for-views
+==>在线API
+http://www.android-doc.com/reference/android/graphics/Bitmap.html
