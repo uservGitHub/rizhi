@@ -30,3 +30,11 @@ JNICALL
 Java_xxx_intFromJNI(JNIEnv *env,jobject activity) {
     return 1 << 8;
 }
+
+static void fillBitmapInternal(int[] pixels,
+                                int width,
+                                int height){
+    FPDF_BITMAP pdfBitmap = FPDFBitmap_Create( width, height, 0);
+    FPDFBitmap_FillRect( pdfBitmap, 0, 0, width, height,
+                         0, 255, 0, 0); //RGBA
+}
