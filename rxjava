@@ -67,3 +67,8 @@ https://www.jianshu.com/p/0cd258eecf60
 它可以把一个发射器  Observable 通过某种方法转换为多个 Observables，
 然后再把这些分散的 Observables装进一个单一的发射器 Observable;
 flatMap 并不能保证事件的顺序，如果需要保证，要用 ConcatMap
+
+Observable.SampleJust(xxx0).filter{xxx1}.map{xxx2}.ccc{xxxn}
+  .subscribe(xxxEnd)
+一个一个依次处理：集合遍历（xxx0i,xxx1i,xxx2i,xxxni,xxxEndi）
+xxx0开始，后面的可能会被中断（continue）->X
