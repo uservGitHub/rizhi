@@ -72,3 +72,12 @@ Observable.SampleJust(xxx0).filter{xxx1}.map{xxx2}.ccc{xxxn}
   .subscribe(xxxEnd)
 一个一个依次处理：集合遍历（xxx0i,xxx1i,xxx2i,xxxni,xxxEndi）
 xxx0开始，后面的可能会被中断（continue）->X
+
+https://github.com/reactive-streams/reactive-streams-jvm
+Publisher
+Subscriber
+Subscription
+Processor
+Publisher.subscribe(Subscriber) ==> Subscriber onSubscribe onNext* (onError | onComplete)?
+
+
