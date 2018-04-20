@@ -46,8 +46,14 @@ $ git commit -am "add file newfile"
 $ git push origin first
 =>git push remote branch
 =>提交修改
-
-
+===
+从远程服务器获取某版本
+$ mkdir xxx
+$ cd xxx
+$ git init
+$ git remote add origin https://github.com/user/xxx.git
+$ git branch -r //??
+$ git pull origin master
 
 
 
