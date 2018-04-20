@@ -52,7 +52,7 @@ $ mkdir xxx
 $ cd xxx
 $ git init
 $ git remote add origin https://github.com/user/xxx.git
-$ git branch -r //??
+$ git branch -r //??无法查看
 $ git pull origin master
 
 
