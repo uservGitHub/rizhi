@@ -39,7 +39,7 @@ Observable.fromIterable(collection)
 subscribeOn 指定被创建的事件内容将以何种线程发出
 observeOn 指定处理发生的线程
 map 实现事件对象的变换
-flatMap 实现一对多的转换，改变的不仅仅是事件对象，还又事件本身Observable.xxx
+flatMap 实现一对多的转换，改变的不仅仅是事件对象，还有事件本身Observable.xxx，还能本层控制并行.subscribeOn(.io())
 
 1.0 -> 2.0
 Action1 Consumer
@@ -81,4 +81,4 @@ Subscription
 Processor
 Publisher.subscribe(Subscriber) ==> Subscriber onSubscribe onNext* (onError | onComplete)?
 
-
+getUser(id,sbuscriber) 应该写成 getUser(id):Observerable<User>
