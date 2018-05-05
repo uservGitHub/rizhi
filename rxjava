@@ -82,3 +82,8 @@ Processor
 Publisher.subscribe(Subscriber) ==> Subscriber onSubscribe onNext* (onError | onComplete)?
 
 getUser(id,sbuscriber) 应该写成 getUser(id):Observerable<User>
+
+concatMap{Observable.just(it).subscribeOn(.io)} //强制使用相同线程
+flatMap{Observable.just(it).subscribeOn(.io)} //使用不同线程
+flatMap{Observable.fromIterator(it).subscribeOn(.io)} //使用一个线程
+
