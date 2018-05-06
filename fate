@@ -3,6 +3,7 @@ https://github.com/barteksc/PdfiumAndroid.git
 
 new jni project
 https://github.com/mshockwave/PdfiumAndroid.git
+compile 'com.github.barteksc:pdfium-android:1.8.2'
 
 
 
