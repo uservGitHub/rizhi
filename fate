@@ -1,8 +1,8 @@
 old jni project
-https://github.com/barteksc/PdfiumAndroid.git
+https://github.com/mshockwave/PdfiumAndroid.git
 
 new jni project
-https://github.com/mshockwave/PdfiumAndroid.git
+https://github.com/barteksc/PdfiumAndroid.git
 compile 'com.github.barteksc:pdfium-android:1.8.2'
 
 
