@@ -1,0 +1,17 @@
+模块 modXXX
+
+settings.gradle
+inclue ':modXXX'
+
+modXXX build.gradle
+buildscript { ... }
+repositories { ... }
+apply plugin: 'com.android.application|library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+android { ... }
+dependencies { ... }
+
+project build.gradle
+buildscript { version='' ... }
+allprojects { ... }
