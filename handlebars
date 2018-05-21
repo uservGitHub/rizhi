@@ -12,4 +12,10 @@ handlebarsHelpers.array({handlebars: handlebars});
         {{#each (after objArray 1)}}
             {{add @key 1}} = {{qdm}}<br>
         {{/each}}
+        
+        {{#each array}}
+        {{#with (itemAt ../array (add @key -1))}}pre:{{name}}<br>{{/with}}
+        {{#with this}}current:{{name}}<br>{{/with}}
+        {{#with (itemAt ../array ())}}next:{{name}}<br>{{/with}}
+        {{/each}}
 
