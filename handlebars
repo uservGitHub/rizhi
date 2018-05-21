@@ -1,2 +1,12 @@
 自定义函数
 http://cnodejs.org/topic/5706731ec5f5b4a959e91973
+添加现成库
+https://stackoverflow.com/questions/22103989/adding-offset-to-index-when-looping-through-items-in-handlebars
+npm install handlebars-helpers --save
+const handlebars = require('handlebars'),
+  handlebarsHelpers = require('handlebars-helpers');
+handlebarsHelpers.math({
+  handlebars: handlebars
+});
+{{math @index "+" 1}}
+
