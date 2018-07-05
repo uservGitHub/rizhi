@@ -1,2 +1,18 @@
+上传Json数据
 curl -H 'Content-Type:application/json' -X POST -d '{"id":1}' http://localhost:3000
+curl -H 'Content-Type:application/json' -d '{"key":"value"}' url
+没有 'Content-Type', 默认传字符串 -H 'Content-Type:application/x-www-form-urlencoded'
+自动添加 'Content-Length:字符串长度'
+
+没有进入路由
+Cannot [method] [path]
+Cannot GET /ab
+
+查看返回状态码
+curl -I -m 10 -o /dev/null -s -w %{http_code} url
+-I 仅http包头
+-m 最多10秒
+-o 屏蔽原有输出信息
+-s 不输出任何东西
+-w 控制额外输出
 
