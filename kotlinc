@@ -23,4 +23,21 @@ println("数字123，字母abc")
 $ kotlinc -script sample.kts
 打印结果
 
+https://www.jianshu.com/p/e6512f39f7c7
+
+--方法总结：
+在引入库的情况下(如a.jar,b.jar)
+$ kotlinc -cp "./a.jar;./b.jar" target.kt
+$ kotlin -Dfile.encoding=UTF-8 -cp ".;./a.jar;./b.jar" TargetKt
+执行结果
+传入参数数量=0
+
+No.1  Thread[main,5,main]
+No.2  Thread[main,5,main]
+No.3  Thread[main,5,main]
+--执行完毕--
+
+注意 -cp 要有. 当前目录，否则TargetKt.class找不到，会提示
+error: could not find or load main class TargetKt
+
 
