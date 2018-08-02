@@ -1,0 +1,26 @@
+用kotlin编写 sample.kt 文件
+fun main(argv:Array<String>){
+  println("数字123，字母abc")
+}
+
+--方法1 用kotlin运行
+$ kotlinc sample.kt
+产生 META-INF/ SampleKt.class
+$ kotlin SampleKt
+打印结果，注意显示（和编码有关）
+
+--方法2 用JVM运行
+$ kotlinc sample.kt -include-runtime -d sample.jar
+产生 sample.jar
+$ java -jar sample.jar
+$ java -Dfile.encoding=UTF-8 -jar sample.jar
+$ java -Dfile.encoding=GBK -jar sample.jar
+对比打印结果，注意显示
+
+--方法3 用kts脚本文件运行
+编写 sample.kts 文件
+println("数字123，字母abc")
+$ kotlinc -script sample.kts
+打印结果
+
+
