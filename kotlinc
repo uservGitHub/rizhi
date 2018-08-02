@@ -44,5 +44,6 @@ error: could not find or load main class TargetKt
 
 对于 kotlin kotlinc 在bash中操作时 -Dfile.encoding 是可以识别的
 但在window cmd 中，就无法识别；在java中调用时，需要这样 exec("cmd /c kotlin ...")
-
+Runtime.getRuntime().exec(下面的命令)
+cmd /c C:\ProgramData\kotlinc\bin\kotlin -cp "e:\kotCompile\.;e:\kotCompile\a.jar;e:\kotCompile\b.jar" RxjavaKt hello!
 
