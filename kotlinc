@@ -22,6 +22,7 @@ $ java -Dfile.encoding=GBK -jar sample.jar
 println("数字123，字母abc")
 $ kotlinc -script sample.kts
 $ kotlinc -Dfile.encoding=UTF-8 -script sample.kts
+$ kotlin -Dfile.encoding=UTF-8 -cp ".;./a.jar;./b.jar" target.kts
 对比打印结果
 
 https://www.jianshu.com/p/e6512f39f7c7
