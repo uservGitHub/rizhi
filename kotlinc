@@ -42,4 +42,7 @@ No.3  Thread[main,5,main]
 注意 -cp 要有. 当前目录，否则TargetKt.class找不到，会提示
 error: could not find or load main class TargetKt
 
+对于 kotlin kotlinc 在bash中操作时 -Dfile.encoding 是可以识别的
+但在window cmd 中，就无法识别；在java中调用时，需要这样 exec("cmd /c kotlin ...")
+
 
