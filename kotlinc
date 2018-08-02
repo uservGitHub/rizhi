@@ -21,7 +21,8 @@ $ java -Dfile.encoding=GBK -jar sample.jar
 编写 sample.kts 文件
 println("数字123，字母abc")
 $ kotlinc -script sample.kts
-打印结果
+$ kotlinc -Dfile.encoding=UTF-8 -script sample.kts
+对比打印结果
 
 https://www.jianshu.com/p/e6512f39f7c7
 
