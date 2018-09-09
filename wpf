@@ -2,3 +2,54 @@ https://github.com/yanjinhuagood/SoftWareHelper
 https://github.com/elsiete/CanvasDiagramEditor
 https://github.com/RXDA/WPF-ZoomAndTranslate-Canvas-with-Mouse
 https://github.com/philous/WpfVirtualCanvas
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+            Thread.CurrentThread.Name = "这是主线程";
+            context = new WindowsFormsSynchronizationContext();
+        }
+        System.Threading.SynchronizationContext context = null;
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Thread th = new Thread(() =>
+            {
+                listBox1.Items.Add(Thread.CurrentThread.Name);
+                context.Send((obj) =>
+                {
+                    listBox1.Items.Add(Thread.CurrentThread.Name);
+                }, null);
+            });
+            th.Name = "这是普通线程";
+            th.Start();
+        }
+    }
+
+
+        public MainWindow()
+        {
+            InitializeComponent();
+            dip = System.Windows.Threading.Dispatcher.CurrentDispatcher;
+            Thread.CurrentThread.Name = "主线程";
+            ds = new System.Windows.Threading.DispatcherSynchronizationContext();
+        }
+        System.Windows.Threading.Dispatcher dip = null;
+        System.Threading.SynchronizationContext ds = null;
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Thread th = new Thread(() =>
+            {
+                dip.Invoke(new Action(() =>
+                {
+                    MessageBox.Show(Thread.CurrentThread.Name);//显示主线程
+                }));
+
+                ds.Send((obj) =>
+                {
+                    MessageBox.Show(Thread.CurrentThread.Name);//显示主线程
+                }, null);
+            });
+            th.Start();
+        }
+    }
