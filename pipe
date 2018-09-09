@@ -1,0 +1,24 @@
+nodejs shell c 等语言中都有管道
+摘自
+https://www.cnblogs.com/LittleHann/p/4431974.html
+tcc 中的管道
+1 在 GNU/Linux 系统上处理管道输入的常见的办法，是让命令行程序可以处理特殊的减号(-)作为命令行参数
+本来需要从某一个文件读取输入数据的命令行程序，在接收到这个减号作为命令行参数以后，就改为从标准输入(stdin)读取数据。
+这样就可以和 Shell 的管道机制配合起来。但有的程序版本（如TCC 0.9.19）不能处理这个减号作为命令行参数，一个替代方法：
+cat hello.c | tcc -run /dev/stdin
+dev/stdin 其实是一个指向 /dev/fd/0 的符号链接
+
+2 TCC 编写的 C 语言脚本程序如何使用管道 
+只要在你的 C 语言脚本程序中恰到好处地使用标准输入(stdin)和标准输出(stdout)就可以
+#include <stdio.h>
+int main(int argc, char **argv)
+{
+    int c;
+    while ((c = fgetc(stdin)) != EOF) 
+    {
+        fputc(c, stdout);
+        fputc(c, stdout);
+    }
+    return 0;
+}
+
