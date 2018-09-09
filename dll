@@ -45,4 +45,6 @@ http://www.qqxiuzi.cn/bianma/Unicode-UTF.php 差汉字编码
 C#端，chars = Name.TakeWhile(s=>s!=0).ToArray()
 Encoding.UTF8.GetString(chars)就可获得原字符串
 
+Tcc 相关
+https://www.cnblogs.com/LittleHann/p/4431974.html
 
