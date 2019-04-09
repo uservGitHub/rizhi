@@ -3,6 +3,21 @@ $ ssh-keygen -t rsa -C "user@126.com"
 =>id_rsa.pub内容 到 github的SHH key中
 $ ssh -T git@github.com
 =>Hi user! You've successfully ...
+=>ssh: connect to host github.com port 22: Connection timed out
+$ cd .../.ssh
+$ nano config
+Host github.com
+User YourEmail@163.com
+Hostname ssh.github.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa
+Port 443
+$ ssh -T git@github.com 回复yes
+#提交时转换为LF，检出时不转换
+git config --global core.autocrlf input    
+#拒绝提交包含混合换行符的文件
+git config --global core.safecrlf true
+=>输入
 $ git clone git@github.com:user/xxx.git
 =>不需要输入用户名和密码（git clone https://...不支持）
 $ git add ... git commit ...
